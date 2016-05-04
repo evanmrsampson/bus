@@ -34,10 +34,13 @@ public class FloydWarshall {
 			}
 		}
 		// iterate that jazz
-		for (int i = 0; i < vertices.size(); i++) {
-			for (int j = 0; j < vertices.size(); j++) {
-				for (int k = 0; k <= i; k++) {
-					
+		for (int i = 1; i < vertices.size(); i++) {
+			for (int x = i; x < vertices.size(); x++) {
+				for (int y = i; y < vertices.size(); y++) {
+					distances.set(x, y, Math.min(distances.get(x,y),
+							distances.get(x, y)));
+				
+				
 				}
 			}
 		}
