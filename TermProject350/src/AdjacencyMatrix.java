@@ -35,6 +35,10 @@ public class AdjacencyMatrix<T> {
 		matrix.get(y).set(x, element);
 	}
 	
+	public T get (int x, int y) {
+		return matrix.get(y).get(x);
+	}
+	
 	
 	
 }
