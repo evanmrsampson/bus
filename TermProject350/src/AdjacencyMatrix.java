@@ -14,7 +14,12 @@ public class AdjacencyMatrix<T> {
 		this.edges = edges;
 		matrix = new ArrayList<ArrayList<T>>(vertices.size());
 		for (int i=0; i < vertices.size(); i++) {
-			matrix.set(i, new ArrayList<T>(vertices.size()));
+			matrix.add(new ArrayList<T>(vertices.size()));
+		}
+		for (int i=0; i < vertices.size(); i++) {
+			for (int j=0; j < vertices.size(); j++) {
+				matrix.get(i).add(null);
+			}
 		}
 	}
 	
@@ -32,13 +37,13 @@ public class AdjacencyMatrix<T> {
 	}
 	
 	public void set(int x, int y, T element) {
+		
 		matrix.get(y).set(x, element);
 	}
 	
 	public T get (int x, int y) {
 		return matrix.get(y).get(x);
 	}
-	
 	
 	
 }
